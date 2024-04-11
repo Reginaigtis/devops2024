@@ -22,6 +22,8 @@ for user in $users; do
         user_dir="$root_dir/$user"
         mkdir -p -m 755 "$user_dir" && chown "$user" "$user_dir"
         log "Создана директория для пользователя $user: $user_dir"
+        permissions=$(ls -ld "$user_dir")
+        log "Права доступа для директории: $permissions"
     fi
 done
 
